@@ -1,0 +1,12 @@
+body {
+    text-align: center;
+}
+
+ * {
+    color: red;
+    font-family: Helvetica;
+} 
+
+ * {
+    background-color: black;
+}
