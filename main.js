@@ -5,3 +5,6 @@ console.log("----------------------------------")
 console.log("This is some practice text")
   let names = ["Matthew", "Samantha", "Steven"];
   console.log(names)
+
+
+

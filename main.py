@@ -4,7 +4,7 @@ app = Flask(__name__, static_url_path='', static_folder='')
 
 @app.route('/')
 def root():
-    return app.send_static_file('event.html')
+    return app.send_static_file('index.html')
 
 print ("My name is Matthew Smith")
 
