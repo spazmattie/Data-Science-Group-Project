@@ -1,16 +1,26 @@
 
 <head>
-    <title> Matthew Smith Visual Studio Code Website </title>
+    <title>{{ title }} - Microblog</title>
     <link rel="stylesheet" href="main.css"/> 
 
 </head>    
 
 <body onload=main()>
+    
+<html>
+    <head>
+        <h1>Hi, {{ user.username }}!</h1>
+        {% for post in posts %}
+        <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
+        {% endfor %}
+    
     <script src="main.js"></script> 
-    <h1> The Seven Continents </h1>
+    <center>
+        <h1> The Seven Continents </h1>
     <figure>
         <img usemap="#continents_map" src=https://bit.ly/2bgFrvL width="600px">
     </figure>
+</center>
 </body>
 
 <body>
