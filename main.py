@@ -37,9 +37,7 @@ def name():
         print('author: ', author)
     else:
         errorMsg = 'Please enter a VALID author name.'
-    html = render_template('name.html',
-        errorMsg=errorMsg,
-        author=author)
+    html = render_template('name.html', errorMsg=errorMsg, author=author)
     response = make_response(html)
     return response
 
@@ -52,13 +50,6 @@ def roi():
     html = render_template('name.html', ROI=str(ROI))
     response = make_response(html)
     return response
-
-
-"""
-@app.route('/name')
-def name():
-    return app.send_static_file("name.html")
-"""
 
 @app.route('/event')
 def event():
