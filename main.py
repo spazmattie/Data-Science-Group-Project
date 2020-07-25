@@ -23,9 +23,42 @@ def index():
 def penny():
     return app.send_static_file("penny.html")
 
+@app.route('/')
+@app.route('/name', methods=['GET', 'POST'])
+def name():
+    print('get req: ', request.args.get)
+    author_list = list(['Matt', 'Sam', 'Steven'])
+    author = request.args.get('author')
+    if author is None:
+        errorMsg = 'Please enter an author name.'
+        author = ''
+    elif author in author_list:
+        errorMsg = ''
+        print('author: ', author)
+    else:
+        errorMsg = 'Please enter a VALID author name.'
+    html = render_template('name.html',
+        errorMsg=errorMsg,
+        author=author)
+    response = make_response(html)
+    return response
+
+@app.route('/roi', methods=['GET'])
+def roi():
+    net_roi = request.args.get('net-roi')
+    coi = request.args.get('coi')
+    ROI = (int(net_roi)/int(coi)) * 100
+    print ('ROI: ', ROI)
+    html = render_template('name.html', ROI=str(ROI))
+    response = make_response(html)
+    return response
+
+
+"""
 @app.route('/name')
 def name():
     return app.send_static_file("name.html")
+"""
 
 @app.route('/event')
 def event():

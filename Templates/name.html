@@ -1,0 +1,50 @@
+<html>
+    <title>
+       Welcome Page 
+    </title>
+    <body onload=listchanger()>
+        <form action="name" method="get">
+            Please enter an author name:
+            <input type="text" name="author" id="authorInput"
+                value="{{author}}">
+            <h4> Error Message: {{ errorMsg }} </h4>
+            <input type="submit" value="Go">
+      </form>
+    </body>     
+        <hr>
+      <form action="roi" method="get">
+          Please enter Net Return on Investment: 
+          <input type='text' name='net-roi' id='net-roi-id' value=''>
+          <br>
+          Please enter Net Cost of Investment: 
+          <input type='text' name='coi' id='coi-id' value=''>
+          <input type="submit" value="Go">
+      </form>
+
+      <h5> ROI: {{ ROI }} </h5>
+
+ 
+        
+        <!--
+        <p>
+            Hello <strong id="myname"> somename </strong> and welcome to this website.
+        </p>
+        <ul class="mylist">
+            <li class="item"> Matt </li>
+            <li class="item"> Sam </li>
+
+        </ul>
+    -->
+
+<html>
+    <script>
+        function main() {
+            document.getElementById("myname").innerHTML = "Matt";
+        }
+        function listchanger() {
+            let mynames = document.getElementsByClassName('item');
+            console.log(mynames);
+            mynames[0].innerHTML= "Martin";
+        }
+    </script>
+</html>
