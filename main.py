@@ -63,7 +63,12 @@ def hello():
     html += "</body></html>"
     return make_response(html)
 
+@app.route('/project')
+def project():
+    return app.send_static_file("project.html")
+
 print ("My name is Matthew Smith")
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8080, debug=True)
+
